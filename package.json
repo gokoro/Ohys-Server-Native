@@ -1,0 +1,19 @@
+{
+  "name": "ohys-server",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "author": "Gokoro <raycle1004@naver.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/app.js",
+    "pm2-install": "pm2 start ecosystem.config.js"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "koa": "^2.13.0",
+    "koa-body": "^4.2.0",
+    "koa-router": "^9.1.0",
+    "mongoose": "^5.9.28",
+    "winston": "^3.3.3"
+  }
+}
