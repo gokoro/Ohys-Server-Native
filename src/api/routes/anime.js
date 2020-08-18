@@ -1,21 +1,21 @@
 const Router = require('koa-router')
-const service = require('../../services')
 
 const router = new Router()
 
-router.get('/', async (ctx) => {
-    const tableDTO = ctx.request.query
+const service = require('../../services')
 
-    const { status, tables } = await service.schedule(tableDTO)
+router.get('/', async (ctx) => {
+    const animeDTO = ctx.request.query
+
+    const { status, item } = await service.anime(animeDTO)
 
     if (!status) {
         ctx.response.status = 400
     }
-
     return ctx.body = {
         status,
-        requestedParam: tableDTO,
-        data: tables.animes || null
+        requestedParam: animeDTO,
+        data: item
     }
 })
 
